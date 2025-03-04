@@ -1,0 +1,14 @@
+build:
+  environment:
+    python: "pypy3.7-7.3.4"  # Use PyPy 3.7 (7.3.4)
+  dependencies:
+    before:
+      - python3 -m ensurepip  # Ensure pip is installed for PyPy
+      - python3 -m pip install --upgrade pip
+      - pip install telebot pytz flask aiogram pymongo pyTelegramBotAPI python-telegram-bot motor
+  
+  tests:
+    override:
+      - chmod +x bgmi || true
+       # Prevent failure if file doesn't exist
+      - python3 sid.py
