@@ -289,7 +289,7 @@ def handle_bgmi(message):
     
     try:
         subprocess.Popen(
-            ["./aadi", target, str(port), str(duration), "900"],
+            ["./bgmi", target, str(port), str(duration), "900"],
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL
         )
